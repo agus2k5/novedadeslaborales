@@ -3,11 +3,10 @@ php:
 - 5.6.12
 install:
 - travis_retry composer install --no-interaction --prefer-dist --no-suggest
-- cp .env.travis .env
+- cp .env .env
 - php artisan key:generate
 sudo: false
-before_install:
-- mysql -e 'CREATE DATABASE IF NOT EXISTS laravelangular;'
+before_install: 
 before_script:
 - phantomjs --webdriver=127.0.0.1:9515 &
 - php artisan serve --port=8081 &
@@ -17,5 +16,5 @@ script: php artisan dusk
 deploy:
   provider: heroku
   api_key:
-    secure: gr7mFGi9eH4F3xEpPbQ1FhBJOOk98l/Led18zyr/MljuZjUnX4ZBAgrBq32X9cn9D7tvZVQS3KtajD0B/x7LF2Li08ZoWi4ZPRgriTgRZV3m85IAsxh1NDPmpwEEeUVsZfNJCrzrOCWDpidZlC5NB8QW5B+0wX/pMRUIsPSSfgEwPIc13NShtiCtJWlZo9cY4jschAEhry8RO2wkWMrlwtDutmGU/gvkATVpkZrafDqh1x4pAawl1Evx6TJrdF8x7So7kNolgXzhmH/i8k9+YD+ff6KpKS9aNFJZQANRarKe4I//J4WXtG0cwmdTsyljEZz2siuPDaTP8TKk5S7tUzvCfm5OpBsJ6PAfOTXpyxxlHCIyQZMQZSuwoZR1FHa6602XN4w/WPmkf7KER8GTtjd48X45U6xQzhWSTLW4jaIQZfspHj4vdgDiTMJdJ88Dxi6DGgUGJFBv9e6qgJFgRl/gzqTd1CWAf70t8cafaEx4oxdv1jM4orhUpNfGwva4QJOn32ExnMzN0dArWLSIiJNIkjxZzl6tUULvaOLXfEoAIcwa110ynpW5vZ2K2y4s/2ILEM1y757FxbUl/Uc9ykaOAjDBigUkL+18CfmWAoRAAjqMg7azTSpVhtldXyJ3hYxVlzddP+tP57m9m/BWvcS8XTXnTACN0NT/lvROckM=
-  app: apptestingagus2k
+    secure: X4pif80D/czzQNDlptb2+2xT2UIyQHsc/oagUbiyi53AxoZxtSQwNaOOuEivB/FVf5WHy3w0eY2P7xOM7wrT6dPbUFA4KrAX6GprjCld0rpfK9pUjUOzWd/pY9TIU5TkGKSSgcIXbgb9PTJnQF0m7SCsf7FVTI7IJzybACMFzMp3FnvyDxE86DuygU8kJZICtMcOidKWTPlofGXDfY0lu6Rgda2FUiGG7zsH9BZzF1pN0hGCwdbFEWgcppurLu4zBvNNJsAM4H3IwPjyv6n65gV8ajkeWAFXsA8jRznc6wQY4DrvA8t8Ll4f0YVFaw7WjDUq6CuEz0oA0lwJniDZjBMZh1Zx7jvzYC24OeSWKoHH3pcbkMNofFZCI4XHCNx40iAWC4dqO6crl/U7lVkVO9x7sw//Q8kLPXnDqxxxmgZwFqpESn/LmDPkSFmP8GhlzwIHhzIeA38hMOzXeVOtb4N0O5J0XIj0rRWnpc63LIrVukzLymQ3zrrldHeE5Fhrxf0xBQAqfucnXWgts6bhbLM7FLeo0PCOmlP7UgXOY3m2Xh0zskQ0SjtIsjkJcaR4Zxy/ljiw1kbA6Ty1zcB0iRlXc4RJQNlN6oyVZe8R3rJR2noZEAw6M7zLVMyRAZEYbxcw4Rie2MfAAXIUtq/GCSqsW8zsJYCB2gvv83V2+ac=
+app: novedadeslaborales
