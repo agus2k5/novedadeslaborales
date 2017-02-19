@@ -83,6 +83,6 @@ class DocenteController extends Controller
     }
 
     public function prueba(){
-        return 'test openship';
+        return 'test travis build con deploy en heroku';
     }
 }
