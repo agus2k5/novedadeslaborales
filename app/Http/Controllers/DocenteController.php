@@ -83,6 +83,6 @@ class DocenteController extends Controller
     }
 
     public function prueba(){
-        return 'probando notificaciones';
+        return 'probando notificaciones en slack';
     }
 }
